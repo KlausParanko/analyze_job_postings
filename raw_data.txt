@@ -1,0 +1,550 @@
+- tech stack [[positions]]
+	- mandatum
+		- ETL/ELT putkien rakentaminen
+		- - Pilvialustat (AWS tai Azure)
+		- - SQL-osaaminen ja kokemus tietokannoista (esim. Teradata tai Snowflake)
+		- - Tiedon mallintaminen (esim. dimensiomallit)
+		- - Ohjelmointitaidot (esim. Python)
+	- twoday
+		- data engineer
+			-
+    Using Azure Synapse Analytics & Azure Data Lake Storage
+    
+    			  
+    
+    Building integrations with Data Factory or some streaming data solution
+    
+    			  
+    
+    Data modelling using DataVault 2.0 modelling or star schema
+    
+    			  
+    
+    Developing data models and BI reports (Power BI / tabular models) 
+    
+    			  
+    
+    Writing advanced SQL
+    
+    			  
+    
+    Azure functions, Azure Databricks or other serverless development
+    
+    			  
+    
+    You have expertise in agile software development and methods (Scrum, Kanban)
+    
+		- spark-kehittäjä
+			-
+			  > Sinulla on kokemusta IT-alasta n. kolme vuotta ja Apache Sparkista vähintään yksi vuosi. Olet käyttänyt Spark-kirjastoja, kuten SparkML tai SparkStreaming.  
+			  Olet toteuttanut eri järjestelmien välisiä integraatioita esim. REST tai SOAP -rajapintoihin.  
+			  Sinulla on myös muutaman vuoden kokemus Java-kehittämisestä Spring Boot -sovelluskehyksellä sekä kontitetuista mikropalveluarkkitehtuureista.  
+			  Plussana katsotaan jos Sinulla on kokemusta jostain seuraavista teknologioista: React, Typescript, Node, GraphQL tai Azure DevOps.  
+			  Arvostamme vähintään AMK-tasoista koulutustasi.  
+			  Meille on tärkeää, että osaat toimia osana tiimiä ja kommunikoit aktiivisesti ja avoimesti. Olet innokas kehittämään ja haastamaan itsesi can-do -asenteella.  
+	- siili
+		-
+		  > Hands-on coding experience with data-intensive coding solutions in languages such as Python, R, Scala, Node.js, C#, Java  
+		  You have experience with Cloud platforms example Azure, AWS, Google Cloud  
+		  Experience or passion for learning data modelling methods like DataVault 2.0  
+		  Experience with Data warehouse automation   
+		  Experience or passion working with modern data warehouse solutions like Snowflake  
+		  Experience using Power BI, Tableau, or Looker for data analysis and reporting.  
+		  Experience with SQL Databases.  
+		  Interest in Machine Learning is a great plus.  
+	- solita
+		- grow as data engineer
+			-
+			  > Cloud platforms (Azure, AWS, GCP)  
+			  SQL  
+			  Python/other programming languages  
+			  Data modelling (Data Vault 2.0)  
+			  Business intelligence tools (Power BI, Tableau, Qlik)  
+			  Project work/consulting experience  
+		- ml engineer
+			- You have experience from developing production-ready and robust ML and AI systems (including MLOps) together with, for example, Data Scientists
+			- You could also have a long background in software development & devops and passion for data science projects or be a Full-stack Data Scientists with solid programming and devops skills and experience from designing & building production-grade ML solutions
+			- You have strong programming skills – we usually code with Python, but also Java or C# experience, for example, provides excellent basis for success
+			- You regularly utilize CI/CD and DevOps methods and tools such as Docker, Terraform, etc.
+			- You have hands-on experience with either Azure, Google Cloud Services or AWS
+			- Experience in or strong interest to learn relevant technologies and tools, such as MLFlow, Kubeflow, Seldon, Sagemaker, Databricks, etc.
+			- It’s also positive, if you have experience regarding NLP, LLMs and/or generative AI.
+		- data engineer
+			-
+			  > Almost all of our new data projects are done in the cloud. Our options are AWS, Azure and Google Cloud.  
+			  Databases create the basis for all data creation. We mostly work with databases that use SQL.  
+			  Python and other programming languages ​​are actively used, for example, in the construction of data pipes. If you know how to program, you have more options when it comes to our client projects.  
+			  We want to use modern modelling methods such as Data Vault 2.0.  
+		- data engineer projekteihin
+			-
+			  > Lähes kaikki uudet dataprojektimme tehdään pilveen. Vaihtoehtojamme ovat AWS, Azure ja Google Cloud.  
+			  Tietokannat luovat perustan kaikelle datatekemiselle. Meillä työskennellään eniten SQL:ää tottelevien kantojen parissa.  
+			  Pythonia ja muita ohjelmointikieliä hyödynnetään aktiivisesti esimerkiksi dataputkien rakennushommissa. Kun osaat ohjelmoida, sinulla on eniten valinnanvaraa asiakasprojektiemme suhteen.  
+			  Haluamme käyttää moderneja mallinnusmenetelmiä, kuten Data Vault 2.0.  
+	- tietoevry
+		- (senior) data architect
+			-
+			  > Over 4 years of experience in a technical customer-facing role in product development and/or other data or SW development projects.  
+			  			    
+			  Experience in working with cloud environments, preferably Azure, also Google/AWS experience is appreciated  
+			  			    
+			  Data Platform design, architecting data solutions for analytical and operational use cases, working with DataOps structure  
+			  			    
+			  Hands-on experience in working with big data integration and processing tools such as Azure Data Factory, Databricks and Spark  
+			  			    
+			  Realtime architecture; streaming data  
+			  			    
+			  Hands-on experience in working with Data Lakes and Data Warehouses  
+			  			    
+			  Experience with Snowflake and Azure Synapse and familiarity on SQL and SQL-based analytics. Python, R, or dbt  
+			  			    
+			  Understanding of Public, Private, & Hybrid Cloud Strategies  
+			  			    
+			  Experience in Data Vault or other data modeling methodologies  
+			  			    
+			  Understanding of information security and privacy issues related to cloud solutions  
+			  			    
+			  Good communication skills and ability to work independently with the customer representatives  
+			  			    
+			  Fluent in Finnish and English, both oral and in writing  
+		- (senior) data engineer
+			-
+			  > Minimum 2-3 years of relevant work experience in data engineering or a related field.  
+			  			    
+			  Fluency in both Finnish and English, with excellent written and verbal communication skills.  
+			  			    
+			  Experience working in modern cloud environments, such as AWS, Azure, or GCP.  
+			  			    
+			  Solid understanding of data lake infrastructure, data warehousing and data analytic tools.  
+			  			    
+			  Proven hands-on experience in building high-volume batch and real-time data pipelines.  
+			  			    
+			  Familiarity with business intelligence tools, preferably MS Power BI.  
+			  			    
+			  Familiarity with DataOps Management platform solutions, such as ADE  
+			  			    
+			  Strong problem-solving skills, attention to detail, and ability to work independently.  
+			  			    
+			  Experience in data analytics and data visualization tools is highly valuable.  
+			  			    
+			  Interest for self-development, keeping up with new possibilities and technologies available to help our customers to reach their data goals and beyond. For example through GenAI based solutions.  
+		- data engineer
+			-
+			  > Software/data pipeline development experience.  
+			  Preferred language skills: Python (PySpark), SQL  
+			  Hands-on experience in working with data exploration and/or modelling.  
+			  Already experience of health and/or welfare data or you are willing to learn.  
+			  Familiarity technologies like Databricks and Azure Synapse.  
+			  Passion to continuously learn new techs and aim higher.  
+			  Passion to build great and high-quality solutions to our customers.  
+			  			    
+	- cgi
+		- [data engineer (tietovarastokehittäjä)](https://cgi.njoyn.com/corp/xweb/XWeb.asp?NTKN=c&clid=21001&Page=JobDetails&Jobid=J0923-0924&BRID=1078633&lang=1)
+			- Toivoisimme sinulla olevan osaamista ainakin joistakin alla olevista:
+			  • Tietovarastojen kehitys  
+			  • PowerBI  
+			  • SQL, Relaatiotietokannat ja datan käsittely  
+			  • Perustietämys ETL-tiedonsiirrosta, esim Apache HOP  
+			  • Replikaatiotiedonsiirto esim. SymmetricDS  
+			  • PostgreSQL  
+			  Eduksi katsomme:  
+			  • Tietämys tähtimalleista tai ODS-ideologiasta  
+			  • Tietämystä PL/SQL:stä  
+		-
+	- mckinsey
+		- de (oslo)
+			- While we advocate for using the right tech for the right task, we often leverage the following technologies: Python, PySpark, SQL, Airflow, Databricks, Kedro (an OSS developed by QuantumBlack), container technologies such as Docker and Kubernetes, cloud solutions such as AWS, GCP or Azure, and more!
+	- sok
+		- data engineer
+			- Python and SQL
+			  Experience in working with cloud infrastructure (AWS, GCP, etc)  
+			  Experience in working with data warehouses (Redshift, Snowflake, BigQuery…)  
+			  Infrastructure configuration with Terraform or similar  
+			  Version control (Github, Gitlab…) and you are familiar with Agile methods  
+			  dbt experience is a plus  
+			  Excellent English (Finnish is a plus)  
+		- data analyst
+			- Vahva tulosorientaatio ja liiketoimintaäly
+			- Vahva analyyttinen tausta ja kyky kääntää kvantitatiivinen ja kvalitatiivinen tieto toimenpide-ehdotuksiksi liiketoiminnalle
+			- Erinomaiset vuorovaikutustaidot: Vakuuttava esiintymistyyli ja hyvät esiintymistaidot. Kyky muokata esiintymistä eri taustan omaaville kuulijoille sopivaksi. Kyky tehdä yhteistyötä useiden eri sidosryhmien kanssa ja rakentaa verkostoja
+			- Erinomaiset (ja vuosien käytännön kokemus) taidot visualisoida dataa liiketoiminnan tarpeisiin (PowerBi, Tableau...)
+			- Erinomaiset taidot tiedon hausta tietokannoista (SQL) ja muista lähteistä
+			- Kokemus Pythonin käytössä suurien datamäärien kanssa työskentelyyn
+			- Kokemustaustaa 2–5 vuotta, mutta olemme valmiita myös panostamaan oppimiseesi ja ottamaan sinut mukaan tiimiin kasvamaan rooliin
+			- Työskentelykielinä suomi ja englanti
+	- alten
+		- de
+		  SQL**:n ja ainakin yhden **ohjelmointikielen** (kuten **Python**, **Java**) taito.  
+			- **Pilvialustojen** (**AWS, Azure, Google Cloud Platform**) käyttökokemus.
+			- Kyky työskennellä sekä itsenäisesti että tiimissä.
+			- Ongelmanratkaisukyky ja viestintätaidot.
+			- **Lisäksi eduksi katsomme:**
+			- Kokemusta tietojen visualisoinnista ja raportoinnista (**Power BI,** **Tableau** ovat tuttuja työkaluja).
+			- **Machine Learning** -osaaminen.
+			- **Big Data** -teknologioiden (**Hadoop**, **Spark**, **Kafka, Periscope**) tuntemus.
+	- kone
+		- principal data engineer
+			- -Degree in either software engineering, data engineering, data science, computer science, physics, statistics, mathematics, or a related field
+			  -Proficiency in Python and SQL  
+			- Familiarity with testing methodologies, DevOps and MLOps practices
+			    
+			  -Experience in running production workloads  
+			    
+			  -Strong communication and mentoring skills with the ability to work effectively in a team  
+			    
+			  -Our working environment is multicultural so English is a must  
+			    
+			  To stand out you could have  
+			    
+			  -Experience or interest in developing cloud solutions and using ML/AI tools preferably on AWS and Databricks  
+			    
+			  -Experience in dashboarding tools, such as Qliksense, Quick Sight, PowerBI, Tableau  
+			    
+			  -Experience in Spark and Databricks  
+			    
+			  -Knowledge of our tech stack: AWS Glue, AWS EMR, AWS Athena, Spark, Databricks, Apache Flink, Apache Kafka, Terraform, Gitlab CI  
+	- singa
+		- de
+			- Develop and manage efficient and scalable data pipelines and integrations with different sources.
+			- Collaborate closely with data analysts and stakeholders to identify requirements and deliver solutions.
+			- Leverage AWS cloud services for data deployment and management.
+			- Handle integrations with our Customer Data Platform (CDP).
+			- Maintain and manage our DWH and ETL process for optimal operation and accessibility.
+			- Planning and structuring events data collection.
+			- **Your Experience**
+			- Proficient with AWS cloud services, including Redshift and AWS Glue.
+			- Strong experience in Python and hands-on experience in a backend environment.
+			- Strong experience in SQL.
+			- Hands-on experience working with one or more relational databases (PostgreSQL, MySQL).
+			- Comprehensive understanding of data architecture, modeling, and structures.
+			- Experience with API development
+			- Familiarity with data pipeline and workflow management tools such as Airflow or Luigi
+			- Prior experience with Customer Data Platforms (CDP), particularly Segment
+	- afry
+		- senior de
+			-
+			  > Osaamista moderneista data-arkkitehtuureista ja -ratkaisuista Snowflakella tai Azurella  
+			  Kokemusta konsultoinnista ja asiakasprojekteista  
+			  Teknistä ja arkkitehtuurillista pilviosaamista (Esim. Azure, AWS, GCP)  
+			  Tietokanta- ja SQL-osaamista  
+			  Datan mallinnustaitoja (Esim. Data Vault, tähtiskeemat)  
+			  Kokemusta ETL/ELT:stä ja tietovaraston automatisointityökaluista (DBT, Agile Data Engine, Matillion)  
+			  Kykyä toimia sekä tiimissä että itsenäisesti  
+			  Hyviä kommunikointitaitoja  
+			  Sujuvaa suomen ja englannin kielen taitoa  
+	- sievo
+		-
+		  > What typically gives a good starting point for our next Data Engineer?  
+		  Proven experience in data engineering  
+		  ETL expertise, preferably SSIS  
+		  Cloud knowledge, preferably Azure Data Factory / Databricks  
+		  Strong SQL skills  
+		  Data warehouse understanding  
+		  Fluency in English. Other language skills are appreciated  
+		  Good communication skills  
+		  Being independent and taking ownership  
+		  Ability to handle vast amounts of data  
+		  Interest in automating processes  
+		  Willingness to face clients  
+		  		    
+		  Extra points for  
+		  Knowledge of procurement and different ERPs (such as SAP, Oracle, Sage, D365,.. )  
+		  Data modelling  
+		  Scripting knowledge like PowerShell or Python  
+		  Experience in working with REST APIs  
+		  Consulting experience  
+		  		    
+	- aktia
+		- de
+			- **Toivottu osaaminen**
+			- Kokemusta modernista ELT data pipeline kehityksestä
+			- Kokemusta datan käsittelyyn liittyvästä ohjelmoinnista, esim. Python, Go
+			- Vahvaa SQL osaamista
+			- Kokemusta DBT työkalusta katsotaan eduksi
+			- Kokemusta pilvipalveluiden kehittämisestä esim. AWS/Azure
+			- Kokemusta tietokannoista
+			- Konttiteknologioiden osaamista esim. Docker
+			- Infrastructure as code- ja CI/CD-kokemusta
+			- Kokemusta ketterästä ohjelmistokehityksestä ja tähän liittyvistä käytännöstä
+			- Omaat analyyttisen, ratkaisukeskeisen ja innostavan työskentelyotteen
+	- nixu
+		- de
+			- **You have the following experience:**
+			- Strong background in data engineering, which includes expertise in data lake architecture, data storage, data transformation, and data integration. Familiarity with Azure, AWS, and Palo Alto is a plus.
+			- Experience or knowledge in artificial intelligence (AI) and machine learning (ML). This is important for developing AI/ML solutions within the data lakes.
+			- Software development skills, preferably in Python
+	- gofore
+		- de/data architect
+			- **Mitä toivomme sinulta**
+			- Halua työskennellä yhteistyössä muiden kanssa, kehittää ja jakaa osaamista tiimeissä
+			- Kielitaitoosi sisältyy sujuva SQL
+			- Useamman vuoden kokemus tietovarastojen tai nykyaikaisten data-alustojen rakentamisesta
+			- Kyvykkyydet tiedon mallintamiseen
+			- Ymmärrät tiedonhallinnan syy-seuraussuhteita ja miten sen muut osa-alueet liittyvät data-alustatekemiseen
+			- Yrityskielemme on englanti, mutta monessa asiakasprojektissamme työskentelyyn käytetään suomen kieltä. Suomen kielen osaaminen ei ole meille välttämättömyys, mutta se helpottaa asiakasprojekteihimme työllistymistä, ja katsotaan siten eduksi rekrytointiprosessissamme.
+			  **Näistä asioista on etua projekteissamme**  
+			- Arkkitehtuurikokemus
+			- Konsultointikokemus tai kokemus asiakasrajapinnassa toimimisesta
+			- Data-alueen sertifikaatit (Azure, AWS)
+			- ETL/ELT + integraatiot + infraosaaminen
+			- Raportoinnin kehittäminen BI-työkaluilla (erityisesti Power BI)
+			- Sinulla on aiempaa kokemusta ja intoa tehdä töitä julkisen sektorin, teollisuuden, terveydenhuollon tai finanssialan asiakkuuksissa.
+			- Certified Data Vault 2.0 Practitioner. Ja jos sinulta ei vielä tätä tunnustusta löydy, me mielellämme tarjoamme mahdollisuuden suorittamiseen, kerrothan siis kiinnostuksestasi!
+			- Suomen kielen taito
+	- nigel frank
+		- azure de/arch
+			- https://duunitori.fi/tyopaikat/tyo/azure-data-engineer-architect-snsig-17226112
+			- * Exercise a Full-stack approach, employing a gamut of Azure technologies encompassing Power BI and Azure Data Factory.
+				* Conceive, actualize, and refine sophisticated data analytics solutions for the clients.
+				* Engage comprehensively in project lifecycles, right from the initial design phase through to full-fledged implementation.
+				* Collaborate harmoniously in a team setting, architecting modern data platforms and pipelines within the expansive expanse of Microsoft Azure's cloud ecosystem.  
+  
+Prerequisites:  
+				* Demonstrated expertise spanning multiple years in data warehousing, inclusive of ETL proficiency and integrations, with a pronounced focus on Microsoft SQL Server databases.
+				* In addition to technical prowess, adeptness in client-oriented teamwork is anticipated, complemented by the ability to independently spearhead developmental initiatives.
+				* Deep-seated appreciation for Azure experience, coupled with a nuanced grasp of Microsoft on-premises analytics solutions and the subtleties of Master Data Management.
+				* An innate passion for continuous learning and the aspiration to ascend the ranks to become a distinguished Azure authority.
+				* Proficiency in both the Finnish and English languages.
+
+	- [iceye](https://duunitori.fi/tyopaikat/tyo/senior-data-engineer-scsom-16929047)
+		- senior de
+			- Your work would include design, development and maintenance of both software and infrastructure solutions for an end to end complex data solution. So, overall this role is a mixture of Data Engineering with an interest towards Data Science knowledge.
+			- Work/proven experience in data-oriented software engineering ( 3-5 years)
+			- Excellent experience with data processing/analysis libraries (e.g. numpy, pandas, etc) and programming skill (Python)
+			- Understanding of Time Series Data Analysis and Visualization Techniques
+			- Interest towards understanding satellite subsystems and generated telemetry
+			- Good communication skill to participate in cross departmental projects
+			- Comfortable finding his/her own way and living well in the continuous stream of change that is inevitable in a start-up that is beginning to scale
+			- Expertise in non-relational and relational databases, understanding how different data structures can affect the performance
+			- You are expected to work with the environment/tools listed below. Thus, in order to ramp up the work, a certain level of prior knowledge and willingness to learn more is required.
+			- Experience in distributed clusters and container orchestration (Kubernetes, Docker)
+			- Experience in API development (RESTful API)
+			- Basic knowledge of infrastructure as a code (Terraform, Ansible) for resource and service provisioning
+			- Experience in cloud based development (AWS)
+			- Dedication to code quality, automation and operational excellence: CI/CD pipelines(Github actions), unit/integration tests
+			- General understanding of good software development practices
+			- **Nice to have:**
+			- Knowledge of Machine Learning concepts
+			- Familiarity with GraphQL
+			- Experience of working with Time Series DB (InfluxDB is an extra plus!)
+			- Experience with building Data Warehouse
+			- Experience with Apache Spark, Dask, or any similar data processing framework
+			- Experience with handling Satellite Data (of any kind)
+		-
+	- nitor
+		- [sen de](https://duunitori.fi/tyopaikat/tyo/senior-data-engineer-snsit-13214969)
+			- ** What makes you successful as a Senior Data Engineer at Nitor?**
+			- Several years of previous work experience in software development (we often work with Python, sometimes you might encounter Scala or Clojure in a client project). Consulting experience is a bonus but not a strict requirement.
+			- Experience of cloud technologies (AWS, Azure, and/or GCP) and relational databases
+			- Mastering the tools needed to create data-intensive applications (e.g. Spark, Kafka)
+			- Ability to automate and manage data pipelines and simplify complex technical entities into more common-sense solutions
+			- You possess a consultative and customer-centric mindset
+			- Professional proficiency in Finnish is considered an advantage
+			- Most importantly: you are passionate about data engineering, and you actively follow the newest developments in the industry
+	- futurice
+		- [sen de](https://duunitori.fi/tyopaikat/tyo/senior-data-engineer-sfsut-16548766)
+			- **Here are some practical things we'd love to see in your back pocket**
+			    
+				* Experience on data stack on AWS (e.g. RedShift, Glue, Athena) or on Azure (e.g. Data Factory, Synapse, Databricks)
+				* Strong know-how on building, deploying and orchestrating data infrastructure (e.g. serverless computation, Sagemaker, CI tools, Terraform, or similar tools). You have a dev-ops oriented mindset.
+				* An excellent understanding of databases. Relational databases are most often used, but many projects also employ document databases, key-value stores, and related technologies.
+				* Practical software experience from a variety of projects. Python or Java experience is on top of our list right now, but other languages are definitely considered as a plus too!
+				* Appreciation for a good communication with both the team and the clients. You have working proficiency in English and Finnish.
+
+	- nordea
+		- [financial crime de](https://duunitori.fi/tyopaikat/tyo/financial-crime-data-engineer-scsom-17288391)
+			- **What you'll be doing:**
+			- Leverage your programming knowledge and distributed computing to process big data, and support various development initiatives to enhance threat detection
+			- Turn innovative ideas and concepts from end user data tools into reusable data solutions
+			- Build data pipelines that supports the creation of a continuous risk monitoring capability
+			- Proactively contribute to the building next generation financial crime solutions including articulating how analytical solutions and data transformations can be integrated into these
+			- Utilize the knowledge of data to optimize the way complex investigations and anti-financial crime monitoring are carried out using data
+			- A curious mind, not afraid of suggesting data driven solutions that will increase the bank's effectiveness and efficiency
+			- Ensure solutions meet business needs and requirements via testing
+			- Document and communicate the results of your efforts
+			- The role is based in Helsinki or Stockholm. You will join a team that is built on hybrid skill-sets and has a dynamic work environment.
+			- **Who you are**
+			  Collaboration. Ownership. Passion. Courage. These are the values that guide us in being at our best - and that we imagine you share with us.  
+			- **Your experience and background:**
+			- Experience and proven track record in handling and working efficiently with large data sets using Hadoop or related cloud platforms
+			- Experience building data pipelines and ETL, preferable in Spark
+			- Possess specialist knowledge of Scala, Python and solutions provided by the most common data engineering platforms
+			- A Bachelor's or Master's degree in data engineering, computer science, technology or related field
+			- Ability to communicate clearly on complex topics
+			- Fluency in English
+			- Experience working in financial crime prevention within the financial services industry is a nice to have
+			- Experience working with Cloud Technologies is a nice to have
+			- If this sounds like you, get in touch!
+	- helen
+		- [de](https://duunitori.fi/tyopaikat/tyo/data-engineer-helen-oy-helsinki-stsyo-17360979)
+			- Toivomme, että sinulla on aiempaa käytännön kokemusta ja innostusta data engineer -työstä ja data-alustojen kehittämisestä. Aikaisempi kokemus energiatoimialalta ei ole välttämätön, mutta siitä on hyötyä. Olet yhteistyö- ja aloitekykyinen tekijä ja työskentelet mielelläsi ketterien datatiimien jäsenenä. Arvostamme erityisesti käytännön kokemusta digipalveluihin liittyvän datan käsittelystä, isoista datamassoista, markkinoinnin automaatiosta sekä streaming datasta. Tunnet aihealueen työvälineet ja konseptit (esim. Databricks, Python, SQL, tietomallinnus). Data-alustan pilviympäristönä meillä on Azure ja siellä työvälineinä mm. Azure Databricks, Azure Synapse, Azure Data Explorer ja Azure Event Hubs.
+	- zure
+		- [data architect](https://zure.com/careers/data-architect/)
+			-
+			  > Mitä data-arkkitehdin rooli meillä tarkoittaa?  
+			  Arkkitehdin rooli on laaja – se muovaantuu jokaisella omanlaiseksi osaamisalueiden ja painotuksien mukaan. Voit tuoda siihen vaikka myynnillisyyttä, projektinhallintaa tai ihan puhdasta kehitysvoimaa. Odotamme sinulta kuitenkin vankkaa osaamista data-analytiikasta, tietovarastoinnista, raportoinnista, API-alustoista tai IoT-ratkaisuista. Pystyt myös keskustelemaan ratkaisuista sekä tiimin että asiakkaan eri sidosryhmien kanssa luontevasti.  
+			  			    
+			  Meillä Zurella projektit pohjautuvat uusimpiin Azure PaaS -palveluihin, eli meillä et päädy ylläpitämään tai kehittämään vanhoihin teknologioihin pohjautuvia toteutuksia. Pystyt tukemaan Zuren Data Engineereja, sekä toimimaan asiakkaan suuntaan yhteyshenkilönä ja tulkkina. Meillä data-arkkitehtuuri ei tarkoita, että työskentelisit yksinomaan tietovarastojen parissa, vaan voit työskennellä esimerkiksi IoT-ratkaisujen, API:en, Power BI:n, datan laadun hallinnan ja viestipohjaisten arkkitehtuurien kanssa.  
+			  			    
+			  Datatekemistä softakehityksen menetelmillä  
+			  Zurella data-alustat rakennetaan samoilla ketterillä menetelmillä ja DevOps-käytännöillä kuin kaikki sovelluskehitysprojektinkin. Infrastructure as Code, Git ja Azure DevOps ovatkin arkipäivää Zuren dataprojekteissa eivätkä vain sanoja PowerPointeilla ja rekryilmoituksessa.  
+			  			    
+			  Jos sinulla on jo useampi vuosi kokemusta SQL:stä ja kaipaat Azuresta uutta, et varmasti pety Zurella. Ja kuten todettu aiemmin, kaikkea ei tarvitse osata ennalta, meidän kanssamme näitä juttuja ei voi olla oppimatta 😊.  
+		- [azure data engineer](https://zure.com/careers/azure-data-engineer/)
+			-
+			  > Projekteissa onnistumme tai epäonnistumme tiiminä. Meillä työskentelet Zuren työntekijöiden, kokeneiden ammattilaisten kanssa. Henkilövuokraus ei ole meidän juttumme. Zuren nettisivuilla voit luoda katsauksen tuleviin kollegoihisi kuten Sannaan ja Markukseen.  
+			  			    
+			  Meillä Zurella projektit pohjautuvat uusimpiin Azure PaaS -palveluihin, eli meillä et päädy ylläpitämään tai kehittämään vanhoihin teknologioihin pohjautuvia toteutuksia. Data Engineerin työkalupakkiin kuuluvat esimerkiksi tietomallinnus, SQL-osaaminen ja dataputkien suunnittelu sekä toteutus. Datamäärien ja ratkaisuiden vaatimusten kasvaessa voit ottaa haltuun klusterilaskentaratkaisuja (esim. Databricks tai Azure Synapse) ja muita Azuren datapalveluita (CosmosDB, Azure Data Explorer, Stream Analytics).  
+			  			    
+			  Meillä Data Engineer ei tarkoita, että työskentelisit yksinomaan tietovarastojen parissa, vaan voit työskennellä esimerkiksi IoT-ratkaisujen, API:en, Power BI:n, datan laadun hallinnan ja viestipohjaisten arkkitehtuurien kanssa.  
+			  			    
+			  Datatekemistä softakehityksen menetelmillä  
+			  Zurella data-alustat rakennetaan samoilla ketterillä menetelmillä ja käytännöillä kuin kaikki sovelluskehitysprojektitkin. DataOps, Infrastructure as Code, Git ja DevOps ovatkin arkipäivää Zuren dataprojekteissa eivätkä vain sanoja PowerPointeilla ja rekryilmoituksessa. Näissäkin saat tiimiltä jeesiä, jos eivät ole vielä niin tuttuja alueita.  
+			  			    
+			  Jos sinulla on jo useampi vuosi kokemusta SQL:stä ja kaipaat Azuresta uutta, et varmasti pety Zurella. Ja kuten todettu aiemmin, kaikkea ei tarvitse osata ennalta, meidän kanssamme näitä juttuja ei voi olla oppimatta. 😊  
+			  			    
+			  			    
+	- wolt
+		- [data science machine learning engineer](https://duunitori.fi/tyopaikat/tyo/data-science-machine-learning-engineer-scsom-16929049)
+			- Team purpose and mission
+			- Working embedded with Data Scientists and other engineers to develop, deploy, scale and maintain impactful Machine Learning solutions
+			- Helping data scientists and other engineers with Machine Learning and ML Platform & infrastructure related topics and questions. Increasing the level of ML engineering in the team.
+			- Monitoring, maintenance and troubleshooting of deployed solutions
+			- Contributing to our MLOps practices and liaising with the ML Platform team
+			- We have openings in multiple domains, such as personalisation & recommendations, search, logistics etc.
+			  📍This role can be based in one of our tech hubs in **Helsinki**, Berlin or Stockholm, or you can work remotely anywhere in Finland, Sweden, Germany, Denmark, and Estonia. Read more about our remote setup here. If you live outside of these countries - not to worry! We provide relocation support to help you make your way to Finland, Germany or Sweden.  
+			- **Qualifications**
+			- You are experienced in end-to-end machine learning deployments and maintenance of deployed solutions and have at least 3+ years of experience in ML/MLOps.
+			- Furthermore, you bring solid experience in scaling and troubleshooting machine learning deployments to the table. You can help with the technical issues the teams encounter.
+			- A good understanding of ML and MLOps principles as well as Software engineering experience in Python should complete your profile.
+			- Ideally you also have experience in Docker, Kubernetes, Flyte, Seldon Core.
+	- silo.ai
+		- [ai jobs](https://www.silo.ai/careers/open-positions)
+		- [ai engineer](https://www.silo.ai/careers/open-position?gh_jid=4058008003)
+			- As an AI Engineer, you'll work in a group of AI-driven product engineers, developing both Silo AI's internal products and client solutions. You will collaborate with ML experts, and learn about solving real-life cases using the latest ML techniques. You may choose to work from our offices in Helsinki , Stockholm or any other office, whichever suits you best.
+			- The responsibilities and tasks cover in particular:
+			- Building, setting up and managing the AI infrastructure (library, workspace and deployment).
+			- Deploying AI models into production.
+			- Creating APIs and helping customers benefiting from AI models in operations.
+			- Creating UIs for customers.
+			- Helping AI Scientists understand the potential and limitations of the infrastructure when planning new projects.
+			- Read more about the projects that we have worked on for [Finnair](https://silo.ai/finnair-silo-ai-improve-situational-awareness-of-air-traffic/) in flight delay prediction,[Ramboll](https://silo.ai/how-artificial-intelligence-is-transforming-the-water-sector-case-ramboll/) in water quality predictions, and for [Awake.AI](https://silo.ai/awake-ai-and-silo-ai-collaborate-in-bringing-intelligence-to-ports-and-maritime-logistics/) in developing smart ports and smart vessels.
+	- cloud2
+		- [avoin hakemus](https://careers.cloud2.fi/jobs)
+	- happeo
+		- open application
+	- capgemini
+		- [sen de](https://ats.talentadore.com/apply/senior-data-engineer/8pWR1l)
+		- **Vahvoilla olet**, jos osa näistä kuvaa sinua.
+		- Sinulla on kokemusta Azure, AWS tai Snowflake-pohjaisista tietovarasto- tai tietoallastoimituksista ja parhaimmillaan olet jo hankkinut sertifioinnin yhden tai useamman pilvipalvelutoimijan teknologioista
+		- Tunnet Lakehouse-arkkitehtuurin ja Databricksin
+		- Ymmärrät raportointi- / analyysikerroksen, tai osaat peräti luoda näitä esim. Power BI:lla
+		- Sinulla on näkemystä analytiikkaympäristön suunnittelusta pilviympäristöihin, ottaen huomioon vaatimukset mm. tietoturvaan, suorituskykyyn ja käyttöoikeuksien hallintaan liittyen
+		- Osaat käsitemallinnuksen ja Data Vault -tietovarastomallinnusmenetelmän
+		- Sinulla on aiempaa kokemusta konsultoinnista
+		- Kollegat kiittävät sujuvia suomen ja englannin kielen viestintä- ja dokumentointitaitojasi
+	- supercell
+		- [sen de](https://supercell.com/en/careers/data-platform-data-engineer/1460905/)
+			- Own and improve the infrastructure for data collection, storage and processing
+			- Proactively suggest and implement improvements that increase scalability, robustness and availability of data systems
+			- Participate in 24/7 on-call to maintain batch and real-time data infrastructure
+			- Improve tooling used by data engineers and data analysts to manipulate and access data
+			- Drive company-wide initiatives that advance the data architecture
+			- Own data governance, quality and privacy
+			- Together with the rest of the team, develop vision and strategy for data engineering practices**
+			  **  
+---
+			- **Requirements**
+			- 5+ years of experience in designing, developing and maintaining data infrastructure
+			- Expert knowledge of SQL and programming languages (Java or Python)
+			- Strong devops oriented mindset
+			- Track record of maintaining large scale ETL processes
+			- Experience with AWS data stack
+			- Familiarity with large scale data warehouse technologies (Databricks, Spark, Spark Streaming, Delta)
+			- Knowledge of build, deployment and orchestration tools (Jenkins, Terraform, Airflow)
+			- Ability to innovate and work independently
+	- innofactor
+		- [azure de](https://ura.innofactor.fi/jobs/1992732-azure-data-engineer?utm_campaign=jobs-widget&utm_source=ura.innofactor.fi&utm_content=jobs&utm_medium=web)
+			- Odotamme sinulta aiempaa kokemusta ja osaamista asiakkaiden liiketoimintahaasteiden ratkaisemisesta erilaisten teknisten ratkaisujen (Data Vault, Data Lake) ja työkalujen (SQL, T-SQL, SQL Server Management Studio, Azure Databricks, Azure Data Factory, WhereScape, DBT, Snowflake) avulla. Meillä pärjäävät parhaiten uteliaat ja itsensä kehittämisestä kiinnostuneet, hyvät vuorovaikutustaidot omaavat. Kommunikointi sujuvasti suomeksi ja englanniksi sekä konsultatiivinen ote auttavat sinua menestymään tehtävässä. Luemme eduksi aiemmin suoritetut Azure sertifikaatit, sekä Snowflake-osaamisesta sekä osaamisen tai ymmärryksen tietovarastojen optimoimisesta.
+	- Loihde
+		- [ai engineer](https://emp.jobylon.com/jobs/186738-loihde-advance-avoin-hakemus-loihde-ai/)
+			-
+			  > Käytännön kokemusta datan käsittelystä ohjelmointikielillä (esim. Spark, Kafka, SQL, Python, R, Java, C++, Scala, NoSQL)  
+			  Kokemusta vaativien mallien kehittämisestä, kouluttamisesta ja arvioinnista  
+			  Osaamista datan tuonnista ja valmistelusta  
+			  Vahvaa kokemusta pilvialustojen hyödyntämisestä (Azure, SAS Vya, IBM, AWS tai Google Cloud)  
+			  Itseohjautuvuutta – Toimit luontevasti ympäristössä, joka edellyttää itsenäistä harkintaa ja vastuunkantoa  
+			  Osaat johtaa ratkaisujen suunnittelua ja toteutusta varmistaen laadukkaat, integroidut ohjelmistoratkaisut aikataulu- ja budjettirajoitusten puitteissa  
+			  Osaat kehittää ja johtaa yksityiskohtaisia ratkaisuja monimutkaisiinkin projekteihin  
+			  Aitoa kiinnostusta vastuullisuutta ja turvallisuutta kohtaan. Tiedostat, miksi aihe on tärkeää tulevaisuuden kannalta tekoälyn kehittyessä.  
+			  Innostut asiakkaalle arvokkaiden ja tarpeellisten palveluiden kehittämisestä. Hyödyllisten ja arvokkaiden asioiden tekeminen on sinulle tärkeä päämäärä sinulle teknologian soveltamisessa.  
+			  Kielivaatimukset: erinomainen suomi ja/tai ruotsi sekä hyvä englanti  
+			  			    
+		- [sen azure de](https://emp.jobylon.com/jobs/185805-loihde-advance-kokenut-azure-data-engineer/)
+			-
+			  > Erinomainen SQL-osaaminen  
+			  Hyvä Data Vault 2.0-osaaminen  
+			  Tiedät käytännön tasolla DevOps ja IaC ovat  
+			  Konsultille ominaisia hyviä kommunikointi- ja tiimityötaitoja  
+			  Eduksesi katsomme Python-, Machine Learning- ja datan visualisointiosaamisen sekä kokemuksen automaatiovälineistä.  
+			  Korkeakoulututkintoa tekniseltä alalta  
+			  			    
+	- nortal
+		- [data architect](https://nortal.com/careers/?openJob=1484)
+			-
+			  > Experience in envisioning and designing solid data architectures as part of overall enterprise architecture  
+			  Have background in software engineering  
+			  Strong working experience on enterprise data strategies and data warehouse solutions  
+			  Experience in various types of data architectures like data lakes, data warehouse and lakehouses  
+			  Up-to-date understanding of the data mesh paradigm  
+			  Experience in Azure and on-premise data solutions  
+			  Are familiar with Snowflake and Databricks  
+			  Love to innovate, demonstrate thought leadership and enjoy supporting pre-sales as a solution architect  
+			  One of following Microsoft certificates: Azure Solutions Architect Expert, Azure Data Engineer Associate, Azure Database Administrator Associate  
+			  Are fluent in both Finnish and English  
+	- collective crunch
+		- [open application](https://www.collectivecrunch.com/careers/)
+	- metacore games
+		- [data analyst, merge mansion](https://metacoregames.com/careers/data-analyst-merge-mansion-2)
+			- Proficiency in SQL and coding skills in a scripting language like Python or R
+			- Hands-on experience in data modeling and cloud data warehouses such as Snowflake, BigQuery or Redshift
+			- Practical knowhow of some BI tool such as Looker, Qlick, Tableau or similar
+			- Solid knowledge of industry standard statistical analyses like A/B testing
+			- Proactive drive and vision to work on what’s important and impactful
+			- Curious personality with good teamwork skills
+			- In addition to these, it would be nice but not mandatory for you to have these as well:
+			- Passion for gaming
+			- Work history in the F2P gaming industry
+			- Extensive experience in applying data science methods from concept to production
+			- Practical knowledge in metrics/semantic-layer and or dbt
+			- Degree in a quantitative discipline such as Mathematics, Statistics, Economics or Engineering
+			- responsibilities
+			- Supporting designers and product managers in their day-to-day needs: finding insights from data through quantitative and qualitative analysis, ideating, and monitoring the impact of our design decisions
+			- Proactively analyzing our game data to spot opportunities for improvements and growth that will guide our game design and monetisation strategies
+			- Designing and evaluating experiments
+			- Driving decision making through in-depth statistical modeling and analyses, and well crafted presentations for both technical and non-technical team members
+			- Spreading best practices to elevate our data team’s success
+			- Building and maintaining dashboards, version-controlled tools and reports
+			- Designing analytics tracking events that help us better understand our players and features
+			- Designing data pipelines in cooperation with our data engineering team, when needed
+		- [data analyst, performance marketing](https://metacoregames.com/careers/data-analyst-performance-marketing)
+			- Past work experience with data either in gaming or digital marketing
+			- Deep knowledge of,
+			- SQL at scale (Snowflake, Redshift, BigQuery)
+				- Python, R or Julia
+				- Looker, Tableau or equivalent visualization tool
+			- Hands-on experience in ROAS, lifetime value or similar modeling
+			- Keen interest to stay up-to-date with the latest trends in the User Acquisition landscape and tools
+			- In addition to these, it would be nice but not mandatory for you to have these as well:
+			- Performance marketing experience from F2P mobile games
+			- Familiarity with,
+			- Data modeling and transformation with tools such as dbt
+				- Version control using Git
+			- Experience with end-to-end model deployment and MLOps
+			- responsibilities
+				- Ensuring quality and consistency of data and prediction between different sources
+				- Building and maintaining reports and data models
+				- Creating tooling that helps with evaluating campaign and creative performance, allocating budgets, and setting targets
+				- Experimenting with conversion and prediction models to improve ROI
+				- Analyzing data for edges to exploit and flag underperforming sources and tactics
+				- Mentoring trainees and creating best practices as the team grows
