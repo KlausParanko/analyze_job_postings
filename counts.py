@@ -121,12 +121,15 @@ df_job_titles.select("*").where("only_data_found").toPandas()
 df_job_titles.groupby().sum().toPandas()
 
 # %%
-# word counts
+# WORD COUNTS
 df_title_word_counts = df.select("link", "job_title")
 
+# wrangle job titles
 drop_parentheses = True
 drop_slash = True
 drop_hyphen = True
+drop_comma = True
+replace_multiple_spaces = True
 
 
 parentheses_pattern = r"(\(|\))"
@@ -142,14 +145,22 @@ if drop_hyphen:
     df_title_word_counts = df_title_word_counts.withColumn(
         "job_title", F.regexp_replace("job_title", r"-", r" ")
     )
+if drop_comma:
+    df_title_word_counts = df_title_word_counts.withColumn(
+        "job_title", F.regexp_replace("job_title", r",", r" ")
+    )
+if replace_multiple_spaces:
+    df_title_word_counts = df_title_word_counts.withColumn(
+        "job_title", F.regexp_replace("job_title", r" +", r" ")
+    )
 
+
+# get word counts
 df_title_word_counts = df_title_word_counts.withColumn(
     "words", F.split(F.col("job_title"), " ")
 )
-
-df_title_word_counts = df_title_word_counts.select(F.explode("words"))
-df_title_word_counts.toPandas()
-df_title_word_counts.groupby("col").count().orderBy("count", ascending=False).toPandas()
+words = df_title_word_counts.select(F.explode("words"))
+word_counts = words.groupby("col").count().orderBy("count", ascending=False)
 
 # %%
 # LOOK AT RAW TEXT
