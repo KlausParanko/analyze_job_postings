@@ -4,7 +4,7 @@ from pyspark.sql.types import *
 import pyspark.sql.functions as F
 
 # %%
-path = r"/home/klaus/Repos/ds/job_postings_scrape/parsed_postings.parquet"
+path = r"/home/klaus/Repos/ds/tech_job_postings/scrape/parsed_postings.parquet"
 
 spark = SparkSession.builder.getOrCreate()
 
@@ -68,12 +68,9 @@ technologies = [
 # %%
 # READ IN DATA
 df = spark.read.parquet(path)
-df.printSchema()
+# df.printSchema()
 df = df.withColumn("listing_date", df["listing_date"].cast("date"))
-df.printSchema()
-
-df.show(vertical=True)
-df.select("link").show()
+# df.printSchema()
 
 # %%
 # links are unique, use them as id
@@ -90,30 +87,69 @@ tech_with_no_spaces = [x.replace(" ", "") for x in technologies]
 
 
 # LOOK AT JOB TITLES
+
+df_job_titles = df.select("link", "job_title")
+
+# regex patterns
 job_title_list = [
     "data",
     "data engineer",
     "data architect",
     "data scientist",
     "data analyst",
-    "ml",
-    "machine learning",
-    "ai",
-    "artificial intelligence",
+    r"(ml|machine learning)",
+    r"(ai|artificial intelligence)",
+    # "engineer",
 ]
-df_job_titles = df.select("link", "job_title")
 for jt in job_title_list:
-    df_job_titles = df_job_titles.withColumn(jt, F.regexp("job_title", F.lit(jt)))
+    df_job_titles = df_job_titles.withColumn(jt, F.regexp_count("job_title", F.lit(jt)))
+
+titles_with_data = [F.col(jt) for jt in job_title_list if "data" in jt]
+data_with_other_word = titles_with_data[1:]
+df_job_titles = df_job_titles.withColumn(
+    "data_combined_row_sum", sum(data_with_other_word)
+)
+df_job_titles = df_job_titles.withColumn(
+    "only_data_found",
+    ((df_job_titles["data"] >= 1) & (df_job_titles["data_combined_row_sum"] == 0)),
+)
+
+# only data (sus?)
+df_job_titles.select("*").where("only_data_found").toPandas()
+
+# most frequent
+df_job_titles.groupby().sum().toPandas()
+
+# %%
+# word counts
+df_title_word_counts = df.select("link", "job_title")
+
+drop_parentheses = True
+drop_slash = True
+drop_hyphen = True
 
 
-for jt in job_title_list:
-    df_job_titles = df_job_titles.withColumn(
-        jt, F.when(F.regexp(df_job_titles["job_title"], F.lit(jt)), 1).otherwise(0)
+parentheses_pattern = r"(\(|\))"
+if drop_parentheses:
+    df_title_word_counts = df_title_word_counts.withColumn(
+        "job_title", F.regexp_replace("job_title", parentheses_pattern, r"")
+    )
+if drop_slash:
+    df_title_word_counts = df_title_word_counts.withColumn(
+        "job_title", F.regexp_replace("job_title", r"/", r" ")
+    )
+if drop_hyphen:
+    df_title_word_counts = df_title_word_counts.withColumn(
+        "job_title", F.regexp_replace("job_title", r"-", r" ")
     )
 
+df_title_word_counts = df_title_word_counts.withColumn(
+    "words", F.split(F.col("job_title"), " ")
+)
 
-df_job_titles.where(df_job_titles["data engineer"] == F.lit(True)).count()
-
+df_title_word_counts = df_title_word_counts.select(F.explode("words"))
+df_title_word_counts.toPandas()
+df_title_word_counts.groupby("col").count().orderBy("count", ascending=False).toPandas()
 
 # %%
 # LOOK AT RAW TEXT
