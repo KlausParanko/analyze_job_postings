@@ -1,57 +1,29 @@
 # %%
-import re
-import pandas as pd
-
-
-def show_counts_for_technologies(technologies, raw_data):
-    counts = {}
-    for t in technologies:
-        counts[t] = len(re.findall(t, raw_data))
-
-    tech_counts = pd.Series(counts).sort_values(ascending=False)
-    print(tech_counts)
-
-
-def does_power_refer_to_power_bi(raw_data):
-    print("Parts where the word 'power' occurs:\n\n")
-    for x in re.finditer("power", raw_data):
-        start, end = x.span()
-        start -= 10
-        end += 10
-        print(raw_data[start:end])
-
-
-def show_counts_for_all_words(raw_data):
-    to_remove = ["*", "[", "(", ")", "]", ".", ","]
-    for tr in to_remove:
-        raw_data = raw_data.replace(tr, "")
-
-    words = pd.Series(raw_data.split())
-    words = words.value_counts()
-    print(words)
-
+from pyspark.sql import SparkSession
+from pyspark.sql.types import *
+import pyspark.sql.functions as F
 
 # %%
-with open("raw_data.txt", "r") as fp:
-    raw_data = fp.read()
-    raw_data = raw_data.lower()
+path = r"/home/klaus/Repos/ds/job_postings_scrape/parsed_postings.parquet"
 
+spark = SparkSession.builder.getOrCreate()
+
+# %%
 technologies = [
     "azure synapse",
     "docker",
     "pytorch",
     "scikit",
     "tableau",
-    "power",
+    "power bi",
     "matplotlib",
     "parquet",
     "rabbitmq",
     "kubernetes",
     "dbt",
     "snowflake",
-    re.compile(r"data\s*bricks"),
+    "databricks",
     "aws",
-    "gcp",
     "azure",
     "kafka",
     "spark",
@@ -59,19 +31,21 @@ technologies = [
     "luigi",
     "hadoop",
     "cassandra",
-    "google",
+    "gcp",
+    "sql",
+    "python",
     "mysql",
     "postgresql",
     "mongodb",
     "cassandra",
     "synapse",
     "teradata",
-    "data factory",
-    re.compile(r"data\s*vault"),
+    "datafactory",
+    "datavault",
     "google cloud",
-    re.compile(r"qlic*k"),
+    "qlik",
     "redshift",
-    "bigquery",
+    "big query",
     "glue",
     "terraform",
     "etl",
@@ -88,9 +62,82 @@ technologies = [
     "iac",
     "streaming",
     "looker",
+    "github",
 ]
 
+# %%
+# READ IN DATA
+df = spark.read.parquet(path)
+df.printSchema()
+df = df.withColumn("listing_date", df["listing_date"].cast("date"))
+df.printSchema()
 
-show_counts_for_all_words(raw_data)
-show_counts_for_technologies(technologies, raw_data)
-does_power_refer_to_power_bi(raw_data)
+df.show(vertical=True)
+df.select("link").show()
+
+# %%
+# links are unique, use them as id
+df.select("link").distinct().count() == df.count()
+
+# WRANGLE
+# lowercase all elements
+for c in df.columns:
+    df = df.withColumn(c, F.lower(c))
+
+# Some postings use eg. power bi while others powerbi. Removing spaces standardizes this.
+df = df.withColumn("raw_text", F.regexp_replace("raw_text", " ", ""))
+tech_with_no_spaces = [x.replace(" ", "") for x in technologies]
+
+
+# LOOK AT JOB TITLES
+job_title_list = [
+    "data",
+    "data engineer",
+    "data architect",
+    "data scientist",
+    "data analyst",
+    "ml",
+    "machine learning",
+    "ai",
+    "artificial intelligence",
+]
+df_job_titles = df.select("link", "job_title")
+for jt in job_title_list:
+    df_job_titles = df_job_titles.withColumn(jt, F.regexp("job_title", F.lit(jt)))
+
+
+for jt in job_title_list:
+    df_job_titles = df_job_titles.withColumn(
+        jt, F.when(F.regexp(df_job_titles["job_title"], F.lit(jt)), 1).otherwise(0)
+    )
+
+
+df_job_titles.where(df_job_titles["data engineer"] == F.lit(True)).count()
+
+
+# %%
+# LOOK AT RAW TEXT
+counts = df.select("link", "raw_text")
+for search_word in tech_with_no_spaces:
+    counts = counts.withColumn(
+        search_word,
+        F.regexp_count("raw_text", F.lit(search_word)),
+    )
+
+# non-distinct sum
+non_distinct_sum = counts.groupby().sum()
+non_distinct_sum.toPandas()
+# only count max one occurrence per posting
+distinct_sum = counts.drop("link", "raw_text")
+for c in distinct_sum.columns:
+    distinct_sum = distinct_sum.withColumn(c, F.when(F.col(c) == 0, 0).otherwise(1))
+distinct_sum = distinct_sum.groupby().sum()
+
+
+# %%
+# max amount of tech in single posting
+max_counts = counts.drop("link", "raw_text")
+max_counts = max_counts.groupby().max()
+# visualize
+max_counts.toPandas().T.sort_values(0, ascending=False)
+# order
