@@ -65,31 +65,6 @@ technologies = [
     "github",
 ]
 
-# %%
-# READ IN DATA
-df = spark.read.parquet(path)
-# df.printSchema()
-df = df.withColumn("listing_date", df["listing_date"].cast("date"))
-# df.printSchema()
-
-# %%
-# links are unique, use them as id
-df.select("link").distinct().count() == df.count()
-
-# WRANGLE
-# lowercase all elements
-for c in df.columns:
-    df = df.withColumn(c, F.lower(c))
-
-# Some postings use eg. power bi while others powerbi. Removing spaces standardizes this.
-df = df.withColumn("raw_text", F.regexp_replace("raw_text", " ", ""))
-tech_with_no_spaces = [x.replace(" ", "") for x in technologies]
-
-
-# LOOK AT JOB TITLES
-
-df_job_titles = df.select("link", "job_title")
-
 # regex patterns
 job_title_list = [
     "data",
@@ -101,90 +76,132 @@ job_title_list = [
     r"(ai|artificial intelligence)",
     # "engineer",
 ]
-for jt in job_title_list:
-    df_job_titles = df_job_titles.withColumn(jt, F.regexp_count("job_title", F.lit(jt)))
 
-titles_with_data = [F.col(jt) for jt in job_title_list if "data" in jt]
-data_with_other_word = titles_with_data[1:]
-df_job_titles = df_job_titles.withColumn(
-    "data_combined_row_sum", sum(data_with_other_word)
-)
-df_job_titles = df_job_titles.withColumn(
-    "only_data_found",
-    ((df_job_titles["data"] >= 1) & (df_job_titles["data_combined_row_sum"] == 0)),
-)
 
-# only data (sus?)
-df_job_titles.select("*").where("only_data_found").toPandas()
+def wrangle(df):
+    def remove_punctuation_and_extra_spaces(df, col_to_wrangle):
+        """Standardizes words for getting word count. Eg 'engineer,' becomes 'engineer'."""
+        punctuation_pattern = r"([^\w\s]|\n)"
+        extra_spaces_pattern = r" +"
 
-# most frequent
-df_job_titles.groupby().sum().toPandas()
+        for pattern in [punctuation_pattern, extra_spaces_pattern]:
+            df = df.withColumn(
+                col_to_wrangle,
+                F.regexp_replace(col_to_wrangle, pattern, r" "),
+            )
+
+        return df
+
+    for c in df.columns:
+        df = df.withColumn(c, F.lower(c))
+
+    for c in ["job_title", "raw_text"]:
+        df = remove_punctuation_and_extra_spaces(df, c)
+
+    df = df.withColumn("listing_date", df["listing_date"].cast("date"))
+
+    return df
+
+
+def get_word_counts(df, col_to_get_word_counts_for):
+    df = df.withColumn("words", F.split(F.col(col_to_get_word_counts_for), " "))
+    words = df.select(F.explode("words"))
+    word_counts = words.groupby("col").count().orderBy("count", ascending=False)
+    return word_counts
+
+
+def get_job_title_counts(df, job_title_list):
+    def get_jobs_with_only_data(df_job_title_counts, job_title_list):
+        """Titles that include the word 'data' but aren't found in my data-related job titles like 'data engineer', 'data scientist'. Used to find out about data-related job titles not in my list."""
+
+        titles_with_data = [F.col(jt) for jt in job_title_list if "data" in jt]
+        data_with_other_word = titles_with_data[1:]
+
+        df_job_title_counts = df_job_title_counts.withColumn(
+            "data_combined_row_sum", sum(data_with_other_word)
+        )
+        df_job_title_counts = df_job_title_counts.withColumn(
+            "only_data_found",
+            (
+                (df_job_title_counts["data"] >= 1)
+                & (df_job_title_counts["data_combined_row_sum"] == 0)
+            ),
+        )
+
+        # only data (sus?)
+        return df_job_title_counts.select("job_title").where("only_data_found")
+
+    job_title_counts = df.select("link", "job_title")
+    for jt in job_title_list:
+        job_title_counts = job_title_counts.withColumn(
+            jt, F.regexp_count("job_title", F.lit(jt))
+        )
+
+    jobs_with_only_data = get_jobs_with_only_data(job_title_counts, job_title_list)
+    frequencies_of_titles = job_title_counts.groupby().sum()
+
+    return job_title_counts, jobs_with_only_data, frequencies_of_titles
+
+
+def get_tech_counts(df, technologies):
+    def remove_spaces(df_tech_counts, technologies):
+        """Some postings use eg. power bi while others powerbi. Removing spaces standardizes this."""
+        df_tech_counts = df_tech_counts.withColumn(
+            "raw_text", F.regexp_replace("raw_text", " ", "")
+        )
+        technologies = [x.replace(" ", "") for x in technologies]
+
+        return df_tech_counts, technologies
+
+    def get_distinct_sum(df_tech_counts):
+        """Only count max one occurrence per posting."""
+
+        df_tech_counts = df_tech_counts.drop("link", "raw_text")
+        for c in df_tech_counts.columns:
+            # get max(1, value)
+            df_tech_counts = df_tech_counts.withColumn(
+                c, F.when(F.col(c) == 0, 0).otherwise(1)
+            )
+        distinct_sum = df_tech_counts.groupby().sum()
+
+        return distinct_sum
+
+    df_tech_counts = df.select("link", "raw_text")
+    df_tech_counts, technologies = remove_spaces(df_tech_counts, technologies)
+
+    for search_word in technologies:
+        df_tech_counts = df_tech_counts.withColumn(
+            search_word,
+            F.regexp_count("raw_text", F.lit(search_word)),
+        )
+
+    non_distinct_sum = df_tech_counts.groupby().sum()
+    distinct_sum = get_distinct_sum(df_tech_counts)
+
+    max_counts_in_single_posting = df_tech_counts.drop("link", "raw_text")
+    max_counts_in_single_posting = max_counts_in_single_posting.groupby().max()
+
+    return df_tech_counts, non_distinct_sum, distinct_sum, max_counts_in_single_posting
+
 
 # %%
-# WORD COUNTS
-df_title_word_counts = df.select("link", "job_title")
+df = spark.read.parquet(path)
+df = wrangle(df)
 
-# wrangle job titles
-drop_parentheses = True
-drop_slash = True
-drop_hyphen = True
-drop_comma = True
-replace_multiple_spaces = True
+# links are unique, use them as id
+df.select("link").distinct().count() == df.count()
 
+word_counts = []
+for c in ["job_title", "raw_text"]:
+    word_counts.append(get_word_counts(df, c))
 
-parentheses_pattern = r"(\(|\))"
-if drop_parentheses:
-    df_title_word_counts = df_title_word_counts.withColumn(
-        "job_title", F.regexp_replace("job_title", parentheses_pattern, r"")
-    )
-if drop_slash:
-    df_title_word_counts = df_title_word_counts.withColumn(
-        "job_title", F.regexp_replace("job_title", r"/", r" ")
-    )
-if drop_hyphen:
-    df_title_word_counts = df_title_word_counts.withColumn(
-        "job_title", F.regexp_replace("job_title", r"-", r" ")
-    )
-if drop_comma:
-    df_title_word_counts = df_title_word_counts.withColumn(
-        "job_title", F.regexp_replace("job_title", r",", r" ")
-    )
-if replace_multiple_spaces:
-    df_title_word_counts = df_title_word_counts.withColumn(
-        "job_title", F.regexp_replace("job_title", r" +", r" ")
-    )
-
-
-# get word counts
-df_title_word_counts = df_title_word_counts.withColumn(
-    "words", F.split(F.col("job_title"), " ")
+job_title_counts, jobs_with_only_data, frequencies_of_titles = get_job_title_counts(
+    df, job_title_list
 )
-words = df_title_word_counts.select(F.explode("words"))
-word_counts = words.groupby("col").count().orderBy("count", ascending=False)
 
-# %%
-# LOOK AT RAW TEXT
-counts = df.select("link", "raw_text")
-for search_word in tech_with_no_spaces:
-    counts = counts.withColumn(
-        search_word,
-        F.regexp_count("raw_text", F.lit(search_word)),
-    )
-
-# non-distinct sum
-non_distinct_sum = counts.groupby().sum()
-non_distinct_sum.toPandas()
-# only count max one occurrence per posting
-distinct_sum = counts.drop("link", "raw_text")
-for c in distinct_sum.columns:
-    distinct_sum = distinct_sum.withColumn(c, F.when(F.col(c) == 0, 0).otherwise(1))
-distinct_sum = distinct_sum.groupby().sum()
-
-
-# %%
-# max amount of tech in single posting
-max_counts = counts.drop("link", "raw_text")
-max_counts = max_counts.groupby().max()
-# visualize
-max_counts.toPandas().T.sort_values(0, ascending=False)
-# order
+(
+    df_tech_counts,
+    non_distinct_sum,
+    distinct_sum,
+    max_counts_in_single_posting,
+) = get_tech_counts(df, technologies)
