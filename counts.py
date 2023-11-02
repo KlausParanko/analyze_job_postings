@@ -2,9 +2,10 @@
 from pyspark.sql import SparkSession
 from pyspark.sql.types import *
 import pyspark.sql.functions as F
+import pandas as pd
 
 # %%
-path = r"/home/klaus/Repos/ds/tech_job_postings/scrape/parsed_postings.parquet"
+path = r"/home/klaus/Repos/ds/tech_job_postings/scrape/data/parsed_postings/parsed_postings.parquet"
 
 spark = SparkSession.builder.getOrCreate()
 
@@ -72,6 +73,7 @@ job_title_list = [
     "data architect",
     "data scientist",
     "data analyst",
+    "analyst",
     r"(ml|machine learning)",
     r"(ai|artificial intelligence)",
     # "engineer",
@@ -185,7 +187,7 @@ def get_tech_counts(df, technologies):
 
 
 # %%
-df = spark.read.parquet(path)
+df = spark.read.option("inferSchema", "True").parquet(path)
 df = wrangle(df)
 
 # links are unique, use them as id
@@ -205,3 +207,6 @@ job_title_counts, jobs_with_only_data, frequencies_of_titles = get_job_title_cou
     distinct_sum,
     max_counts_in_single_posting,
 ) = get_tech_counts(df, technologies)
+
+# write to excel
+# to_write_df.to_excel("output.xlsx")
